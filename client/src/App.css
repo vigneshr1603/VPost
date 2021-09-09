@@ -1,0 +1,194 @@
+/* Optional styling for the form container box */
+
+.card-panel {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 5px 40px, rgba(0, 0, 0, 0.1) 0 5px 10px;
+  border-bottom: 10px solid transparent;
+  transition: box-shadow 0.25s;
+  padding: 20px;
+  margin: 0.5rem 0 1rem;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+/* Font Awesome Icons */
+
+.form-group a i {
+  font-family: FontAwesome;
+  margin: 0 auto;
+  font-size: 5rem;
+  font-style: normal;
+}
+
+.min-container .card-panel form .fa {
+  top: 13px;
+  right: 1rem;
+}
+
+.card-panel-1 {
+  box-shadow: rgba(65, 65, 65, 0.1) 0 5px 40px, rgba(0, 0, 0, 0.1) 0 5px 10px;
+  border-bottom: 10px solid transparent;
+  transition: box-shadow 0.25s;
+  padding: 20px;
+  margin: 0.5rem 0 1rem;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+  .min-container {
+    max-width: 650px;
+  }
+}
+
+.min-container {
+  margin: 0 auto;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.userMain .userBlock {
+  float: left;
+  width: 100%;
+  box-shadow: 0px 0px 23px -3px #ccc;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  background: #fff;
+}
+.userMain .userBlock .backgrounImg {
+  float: left;
+  overflow: hidden;
+  height: 77px;
+}
+.userMain .userBlock .backgrounImg img {
+  width: auto;
+}
+.userMain .userBlock .userImg {
+  text-align: center;
+}
+.userMain .userBlock .userImg img {
+  width: 80px;
+  height: 80px;
+  margin-top: -39px;
+  border-radius: 100%;
+  border: 5px solid #fff;
+}
+.userMain .userBlock .userDescription {
+  text-align: center;
+}
+.userMain .userBlock .userDescription h5 {
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+.userMain .userBlock .userDescription p {
+  margin-bottom: 5px;
+}
+.userMain .userBlock .userDescription .btn {
+  padding: 0px 23px 0px 23px;
+  height: 22px;
+  border-radius: 0;
+  font-size: 12px;
+  background: #0198dd;
+  color: #fff;
+}
+.userMain .userBlock .userDescription .btn:hover {
+  opacity: 0.7;
+}
+
+.userMain .userBlock .followrs {
+  display: inline-flex;
+  margin-right: 10px;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+}
+.userMain .userBlock .followrs .number {
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: -1px;
+}
+.jumbotron {
+  background-color: white;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.938);
+}
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #ffffff;
+}
+.navbar-custom {
+  background-color: #ff5500;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgb(255, 255, 255);
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.vertical-center {
+  min-height: 90vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+    
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Card Styles */
+    
+
+    
+
+    
+
+    
+
+    /* .card-heading {
+        font-size: 18px;
+        font-weight: bold;
+        background: #fff;
+        padding: 10px 15px;
+    }
+
+    .card-text {
+        padding: 10px 15px;
+        background: #fff;
+        font-size: 14px;
+        color: #636262;
+    }
+
+    .card{
+      border-radius: 8px;
+    }
+    .req{
+      border-radius: 8px;
+      transition: 0.5s;
+    }
+    .card .req:hover{
+      box-shadow:1px 1px 6px rgb(153, 153, 153);
+      transition: 0.5s;
+    } */
+    .req.card:hover{
+      /* transform: scale(1.03);
+      transition: 0.4s; */
+      background-color: rgb(248, 248, 248);
+    }
