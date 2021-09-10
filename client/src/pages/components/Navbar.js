@@ -27,7 +27,7 @@ function Navbar() {
 
                         </li>
                         <li className="nav-item">
-                            <Link to="/addpost" className="nav-link">&nbsp;&nbsp;<i className="fas fa-cloud"></i> Add Post</Link>
+                            <Link to="/addpost" className="nav-link">&nbsp;&nbsp;<i className="fas fa-cloud-upload-alt"></i> Add Post</Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/settings" className="nav-link">&nbsp;&nbsp;<i className="fas fa-cog"></i> Settings</Link>

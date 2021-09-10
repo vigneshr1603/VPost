@@ -33,7 +33,8 @@ function Users() {
     <>
       <Navbar></Navbar><br></br>
       <div className="container">
-
+      {listOfUsers.length>0 && <h2 className="mb-4" style={{fontFamily:"'Patua One', cursive"}}>Users</h2>}
+     
         <div className="row">
           {listOfUsers.map((value, key) => {
             return (

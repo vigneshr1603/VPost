@@ -41,12 +41,10 @@ export class Login extends Component {
             this.handleError("Enter login details properly.", "border border-danger text-center text-danger alert alert-danger");
         }
         else {
-            console.log(this.state);
             axios.post(url+"/auth/login", this.state).then((response) => {
 
                 if (!response.data.error) {
                     this.handleError("", "");
-                    console.log(response.data);
                     sessionStorage.setItem("accessToken", response.data);
                     this.props.history.push("/home");
 

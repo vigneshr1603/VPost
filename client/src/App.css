@@ -1,4 +1,4 @@
-/* Optional styling for the form container box */
+
 body{
   zoom: 89%;
 }
@@ -11,8 +11,6 @@ body{
   border-radius: 2px;
   background-color: #fff;
 }
-
-/* Font Awesome Icons */
 
 .form-group a i {
   font-family: FontAwesome;
@@ -138,7 +136,7 @@ body {
 }
 
 .vertical-center {
-  min-height: 90vh; /* These two lines are counted as one :-)       */
+  min-height: 90vh;
 
   display: flex;
   align-items: center;
@@ -155,42 +153,8 @@ li {
         text-decoration: none;
     }
 
-    /* Card Styles */
     
 
-    
-
-    
-
-    
-
-    /* .card-heading {
-        font-size: 18px;
-        font-weight: bold;
-        background: #fff;
-        padding: 10px 15px;
-    }
-
-    .card-text {
-        padding: 10px 15px;
-        background: #fff;
-        font-size: 14px;
-        color: #636262;
-    }
-
-    .card{
-      border-radius: 8px;
-    }
-    .req{
-      border-radius: 8px;
-      transition: 0.5s;
-    }
-    .card .req:hover{
-      box-shadow:1px 1px 6px rgb(153, 153, 153);
-      transition: 0.5s;
-    } */
     .req.card:hover{
-      /* transform: scale(1.03);
-      transition: 0.4s; */
       background-color: rgb(248, 248, 248);
     }
