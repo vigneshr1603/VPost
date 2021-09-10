@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import loginlogo from '../assets/loginlogo.png'
 import { url } from '../helpers/BaseUrl';
+import EmptyNavbar from './components/EmptyNavbar';
 export class Login extends Component {
 
 
@@ -61,12 +62,12 @@ export class Login extends Component {
         return (
 
             <div>
-                
+                <EmptyNavbar></EmptyNavbar>
                 <section className="container min-container py-md-5 mt-4">
                     <div className="card-panel p-sm-5 position-relative">
                         <div className="text-center">
                             <h2 className="mt-2">Login!</h2><br></br>
-                            <img alt="" width="15%" src={loginlogo}></img>
+                            <img alt="" width="12%" src={loginlogo}></img>
 
                         </div>
                         <form id="LoginForm" className="mt-5">

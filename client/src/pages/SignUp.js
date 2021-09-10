@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import signuplogo from '../assets/signuplogo.png'
 import { url } from '../helpers/BaseUrl';
+import EmptyNavbar from './components/EmptyNavbar';
 export class SignUp extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +20,11 @@ export class SignUp extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
     };
     
-    
+    validateEmail = (mailid) => {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mailid))
+            return true;
+        return false;
+    }
     handleInputChange(event) {
         
         const target = event.target;
@@ -38,13 +43,14 @@ export class SignUp extends Component {
     }
     signup=()=>{
         this.handleError("","");
-        
-        console.log(this.state);
         if(this.state.username==="" || this.state.email==="" || this.state.password==="" ){
             this.handleError("Enter the details properly","border border-danger text-center text-danger alert alert-danger")
           
         }
-        
+        else if(this.validateEmail(this.state.email)===false){
+            this.handleError("Enter a valid email address", "border border-danger text-center text-danger alert alert-danger");
+      
+        }
         else if(this.state.password.length<8){
             this.handleError("Length of password should be atleast 8", "border border-danger text-center text-danger alert alert-danger");
       
@@ -66,15 +72,15 @@ export class SignUp extends Component {
     render() {
         return (
             <div>
-                <br></br>
+                <EmptyNavbar></EmptyNavbar>
              <section className="container min-container mt-4" >
                     <div className="card-panel p-sm-5 position-relative">
                         <div className="text-center">
                             <h2 className="mt-2">SignUp!</h2><br></br>
-                            <img alt="" width="15%" src={signuplogo}></img>
+                            <img alt="" width="12%" src={signuplogo}></img>
 
                         </div>
-                        <form id="SignupForm" className="mt-5">
+                        <form id="SignupForm" className="mt-4">
 
                         <div className="form-group position-relative">
                                 <label htmlFor="name" className="sr-only">Name</label>
@@ -84,7 +90,7 @@ export class SignUp extends Component {
                             <br></br>
 
                             <div className="form-group position-relative">
-                                <label htmlFor="username" className="sr-only">Name</label>
+                                <label htmlFor="username" className="sr-only">Username</label>
                                 <input className="form-control input-lg" value={this.state.username} onChange={this.handleInputChange} id="username" name="username" type="text" placeholder="Username" required></input>
                                 <i className="fa fa-user fa-lg position-absolute"></i>
                             </div>
@@ -96,13 +102,6 @@ export class SignUp extends Component {
                                 <i className="fa fa-envelope fa-lg position-absolute"></i>
                             </div>
                             <br></br>
-
-                            {/* <div className="form-group position-relative">
-                                <label htmlFor="mobile" className="sr-only">Mobile Number</label>
-                                <input className="form-control input-lg" value={this.state.mobile} onChange={this.handleInputChange} id="mobile" name="mobile" type="text" placeholder="Mobile Number" required></input>
-                                <i className="fa fa-mobile fa-lg position-absolute"></i>
-                            </div>
-                            <br></br> */}
 
                             <div className="position-relative">
                                 <label htmlFor="password" className="pull-left sr-only">Password</label>

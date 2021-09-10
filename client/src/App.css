@@ -1,5 +1,7 @@
 /* Optional styling for the form container box */
-
+body{
+  zoom: 89%;
+}
 .card-panel {
   box-shadow: rgba(0, 0, 0, 0.1) 0 5px 40px, rgba(0, 0, 0, 0.1) 0 5px 10px;
   border-bottom: 10px solid transparent;
