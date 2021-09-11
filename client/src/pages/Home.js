@@ -40,7 +40,7 @@ function Home() {
                         </li>
                     )
                 })}
-                 {showImage===0 && <div className="mt-4 text-center" ><img  style={{width:'55%'}} src={notfound} alt=""></img><h2 className="mt-4" style={{ fontFamily: "'Patua One', cursive" }}>No Posts found</h2></div>}
+                 {showImage===0 && <div className="mt-4 text-center" ><br></br><br></br><img  style={{width:'55%'}} src={notfound} alt=""></img><h2 className="mt-4" style={{ fontFamily: "'Patua One', cursive" }}>No Posts found</h2></div>}
             </div>
             </div>
         </div>

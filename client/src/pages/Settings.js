@@ -75,10 +75,10 @@ function Settings() {
                     <div className="card-body">
                         <h3 className="card-title">Change Password</h3>
                         <label htmlFor="password">New password</label>
-                        <input onChange={(event) => { setPassword(event.target.value); }} type="password" id="password" className="form-control mt-2"></input>
+                        <input value={password} onChange={(event) => { setPassword(event.target.value); }} type="password" id="password" className="form-control mt-2"></input>
                         <label htmlFor="con-password" className="mt-4">Confirm password</label>
-                        <input type="password" onChange={(event) => { setConfirmPassword(event.target.value); }} id="con-password" className="form-control mt-2"></input>
-                        <button type="button" className="btn btn-primary mt-4" onClick={() => changePassword()}>Change Password</button>
+                        <input value={confirmPassword} type="password" onChange={(event) => { setConfirmPassword(event.target.value); }} id="con-password" className="form-control mt-2"></input>
+                        <button type="button" className="btn btn-primary mt-4" onClick={() => changePassword()} disabled={password.length<8 || confirmPassword.length<8 || password!==confirmPassword}>Change Password</button>
                     </div>
                 </div>
             </div>

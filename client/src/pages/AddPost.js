@@ -6,8 +6,10 @@ import Swal from 'sweetalert2';
 function AddPost(props) {
     const [postText, setPostText] = useState([]);
     const [title, setTitle] = useState([]);
+    const [btndisabled , setDisabled] = useState(false);
     const CreatePost = () => {
-        if (postText === "" || title === "") { }
+        setDisabled(true);
+        if (postText === "" || title === "") {  }
         else {
             axios.post(url + "/posts/addpost", { postText: postText, title: title }, { headers: { accessToken: sessionStorage.getItem("accessToken") } }).then((response) => {
                 Swal.fire({
@@ -45,7 +47,7 @@ function AddPost(props) {
                             </div>
                             <br></br>
                             <div className="form-group  position-relative">
-                                <button onClick={CreatePost} className="btn btn-primary" type="button"><i className="fa fa-cloud-upload-alt" aria-hidden="true"></i> Add Post</button>
+                                <button onClick={CreatePost} className="btn btn-primary" type="button" disabled={(postText.length<1 || title.length<1 || btndisabled===true)}><i className="fa fa-cloud-upload-alt" aria-hidden="true" ></i> Add Post</button>
                             </div>
                         </form></div>
                 </div>
