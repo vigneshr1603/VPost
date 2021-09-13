@@ -15,6 +15,8 @@ router.post("/addComment",validation,async (req,res)=>{
     const comment=req.body; 
     comment.username = req.user.username; 
     await Comments.create(comment);
+    const comments = await Comments.findAll();
+    comment.commentId=comments.pop().dataValues.id;
     res.json(comment);
 
 })

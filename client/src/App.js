@@ -14,6 +14,7 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import {AuthContext} from "./helpers/AuthContext";
 import { url } from "./helpers/BaseUrl";
+import EditPost from "./pages/EditPost";
 function App() {
 
   const [authState, setAuthState] = useState({
@@ -55,6 +56,7 @@ function App() {
           <Route path="/user/:id" exact component={UserPosts}></Route>
           <Route path="/post/:id" exact component={PostAndComments}></Route>
           <Route path='/settings' exact component={Settings}></Route>
+          <Route path="/edit/:postId" exact component={EditPost}></Route>
           <Redirect path="" to="/login"></Redirect>
           <Route component={PageNotFound}></Route>
         </Switch>

@@ -38,12 +38,12 @@ function AddPost(props) {
                         <form>
                             <div className="form-group  position-relative">
                                 <label htmlFor="title">Title</label>
-                                <input type="text" id="title" placeholder="Title..." onChange={(event) => { setTitle(event.target.value) }} className="form-control"></input>
+                                <input type="text" id="title" placeholder="Title..." onChange={(event) => { setTitle(event.target.value) }} className="form-control mt-2" maxLength='50'></input>
                             </div>
                             <br></br>
                             <div className="form-group  position-relative">
                                 <label htmlFor="description">Description</label>
-                                <textarea type="text" id="description" placeholder="Write something..." onChange={(event) => { setPostText(event.target.value) }} className="form-control"></textarea>
+                                <textarea type="text" id="description" placeholder="Write something..." onChange={(event) => { setPostText(event.target.value) }} className="form-control mt-2" maxLength="200"></textarea>
                             </div>
                             <br></br>
                             <div className="form-group  position-relative">

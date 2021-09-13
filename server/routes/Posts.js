@@ -36,13 +36,23 @@ router.delete("/:postId", validation, async (req, res) => {
     await Posts.destroy({
         where: {
             id: postId,
+            username:req.user.username
         },
     });
 
     const username = req.user.username;
     const user = await Users.findOne({ where: { username: username } });
     await Users.update({ postCount: user.postCount - 1 }, { where: { username: username } });
-    
+
     res.json("DELETED");
 });
+
+
+router.post("/edit/:postId", validation, async (req, res) => {
+    const postId = req.params.postId;
+    const username = req.user.username;
+    const { title, postText } = req.body;
+    await Posts.update({ postText: postText, title: title }, { where: { id: postId,username:username } });
+    res.json("EDITED");
+})
 module.exports = router

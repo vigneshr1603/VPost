@@ -37,7 +37,7 @@ function CommentCard(props) {
                 <div className="card-body ">
                     <div className="card-text row">
                         <p className="col text-start">{props.commentText}</p>
-                        {authState.username === props.username && (<i className="col fas fa-trash text-danger text-end" onClick={() => deleteComment(props.postId)} style={{cursor:'pointer'}} data-toggle="tooltip" data-placement="top" title="Delete comment"></i>)}
+                        {authState.username === props.username && (<i className="col fas fa-trash text-danger text-end" onClick={() => deleteComment(props.postId)} style={{cursor:'pointer', maxWidth:'fit-content',height:'fit-content'}} data-toggle="tooltip" data-placement="top" title="Delete comment"></i>)}
                     </div>
                     <p className=" card-text text-end text-muted"> ~{props.username}</p>
                 </div>

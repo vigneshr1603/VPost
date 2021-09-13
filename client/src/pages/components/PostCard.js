@@ -11,8 +11,8 @@ function PostCard(props) {
     <Link to={props.postLink} >
       <div className="req card text-center text-dark">
         <div className="card-body">
-          <h5 className="card-title fw-bold">{props.title}</h5>
-          <p className="card-text">{truncate(props.postText, 30)}</p>
+          <h5 className="card-title fw-bold">{truncate(props.title,10)}</h5>
+          <p className="card-text">{truncate(props.postText, 20)}</p>
           <p className="card-text">
             <small className="text-muted">posted by {props.username}</small>
           </p>
