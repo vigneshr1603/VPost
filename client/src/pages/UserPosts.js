@@ -22,7 +22,8 @@ function UserPosts() {
                 if(response.data.length===0)  setShowImage(0);
             }
         });
-    });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
     const getPostLink = (id) =>{
         return "/post/"+id
     }

@@ -21,9 +21,11 @@ export class SignUp extends Component {
     };
     
     validateEmail = (mailid) => {
+        // eslint-disable-next-line
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mailid))
             return true;
         return false;
+        
     }
     handleInputChange(event) {
         

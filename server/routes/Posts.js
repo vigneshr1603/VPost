@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Posts } = require("../models");
-const { Users } = require("../models")
+const { Users,Likes } = require("../models")
 const { validation } = require("../middlewares/AuthMiddleware");
 
 router.post("/addpost", validation, async (req, res) => {
@@ -28,6 +28,16 @@ router.get("/getpostsbyid/:id", validation, async (req, res) => {
 router.get("/getpostbypostid/:id", validation, async (req, res) => {
     const id = req.params.id;
     const posts = await Posts.findOne({ where: { id: id } })
+    const liked = await Likes.findOne({ where : {UserId:req.user.id,PostId:id}})
+   
+    if(liked){
+        posts.dataValues.liked=true
+    }
+    else{
+        posts.dataValues.liked=false
+    }
+    const liked_count = await Likes.findAll({where : {PostId : id}}) 
+    posts.dataValues.liked_count=liked_count.length;
     res.json(posts);
 })
 

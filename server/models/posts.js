@@ -22,6 +22,9 @@ Posts = (sequelize, DataTypes) => {
       Posts.hasMany(models.Comments, {
         onDelete: "cascade",
       });
+      Posts.hasMany(models.Likes, {
+        onDelete: "cascade",
+      });
     };
     return Posts;
 };

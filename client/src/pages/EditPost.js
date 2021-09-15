@@ -24,6 +24,7 @@ function EditPost() {
                 setTitle(response.data.title);
             }
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const edit = () => {
