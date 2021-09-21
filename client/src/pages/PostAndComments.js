@@ -17,6 +17,7 @@ function PostAndComments(props) {
     const [btndisabled, setBtnDisabled] = useState(false);
     const [LikedCount, setLikedCount] = useState(0);
     const [ShowLiked, setShowLiked] = useState(false);
+    const [showPage,setShowPage] =useState(false);
     const history = useHistory();
     const deletePost = (id) => {
         axios
@@ -100,6 +101,7 @@ function PostAndComments(props) {
             else {
                 setPost(response.data);
                 setLikedCount(response.data.liked_count);
+                setShowPage(true);
                 if (response.data.liked === true) {
                     setShowLiked(true);
                 }
@@ -125,7 +127,7 @@ function PostAndComments(props) {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="container">
+           {showPage===true && (<><div className="container">
                 <br></br>
                 <div className="card">
                     <div className="card-body ">
@@ -142,31 +144,30 @@ function PostAndComments(props) {
                         </div>
                         <div className="row">
                             <div className="col mt-2 mx-1 text-start">
-                                {ShowLiked === false && <i className="col far fa-thumbs-up" style={{ cursor: 'pointer' }} onClick={() => LikePost(post.id)}>&nbsp;<b style={{fontFamily:'monospace'}}>{LikedCount}</b></i>}
-                                {ShowLiked === true && <i className="col fas fa-thumbs-up" style={{ cursor: 'pointer' }} onClick={() => LikePost(post.id)}>&nbsp;<b style={{fontFamily:'monospace'}}>{LikedCount}</b></i>}
+                                {ShowLiked === false && <i className="col far fa-thumbs-up" style={{ cursor: 'pointer' }} onClick={() => LikePost(post.id)}>&nbsp;<b style={{ fontFamily: 'monospace' }}>{LikedCount}</b></i>}
+                                {ShowLiked === true && <i className="col fas fa-thumbs-up" style={{ cursor: 'pointer' }} onClick={() => LikePost(post.id)}>&nbsp;<b style={{ fontFamily: 'monospace' }}>{LikedCount}</b></i>}
                             </div>
                             <p className="col  card-text text-end text-muted"> posted by {post.username}</p>
                         </div>
                     </div>
                 </div>
                 <br></br>
-                <input type="text" className="form-control" value={commentText} onChange={(event) => { setCommentText(event.target.value); }} placeholder="Add a comment..." maxLength='100'></input><br></br>
+                <input type="text" className="form-control" value={commentText} onChange={(event) => { setCommentText(event.target.value); } } placeholder="Add a comment..." maxLength='100'></input><br></br>
                 <button className=" btn btn-primary" onClick={addComment} disabled={commentText.length < 1 || btndisabled}>Add Comment</button>
-            </div>
-            <div className="container">
-                <br></br>
+            </div><div className="container">
+                    <br></br>
 
-                {comments.length > 0 && <h2 className="mb-4" style={{ fontFamily: "'Patua One', cursive" }}>Comments</h2>}
-                <div className="row">
-                    {comments.reverse().map((value, key) => {
-                        return (
-                            <li key={key}>
-                                <CommentCard username={value.username} postId={value.id} commentText={value.commentText} ></CommentCard>
-                            </li>
-                        )
-                    })}
-                </div>
-            </div>
+                    {comments.length > 0 && <h2 className="mb-4" style={{ fontFamily: "'Patua One', cursive" }}>Comments</h2>}
+                    <div className="row">
+                        {comments.map((value, key) => {
+                            return (
+                                <li key={key}>
+                                    <CommentCard username={value.username} postId={value.id} commentText={value.commentText}></CommentCard>
+                                </li>
+                            );
+                        })}
+                    </div>
+                </div></>)}
 
         </div>
     )
