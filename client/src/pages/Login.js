@@ -73,7 +73,7 @@ export class Login extends Component {
 
                             <div className="form-group position-relative">
                                 <label htmlFor="username" className="sr-only">Name</label>
-                                <input className="form-control input-lg" value={this.state.username} onChange={this.handleInputChange} id="username" name="username" type="text" placeholder="Username or Email" required></input>
+                                <input className="form-control input-lg" value={this.state.username} onChange={this.handleInputChange} id="username" name="username" type="text" placeholder="Username" maxLength="20" required></input>
                                 <i className="fa fa-user fa-lg position-absolute"></i>
                             </div>
                             <br></br>
@@ -83,7 +83,7 @@ export class Login extends Component {
                             <div className="position-relative">
                                 <label htmlFor="password" className="pull-left sr-only">Password</label>
                                 <input className="form-control input-lg" value={this.state.password} onChange={this.handleInputChange} id="password" name="password" type="password"
-                                    placeholder="Password" required></input>
+                                    placeholder="Password" maxLength="15" required></input>
                                 <i className="fa fa-lock fa-lg position-absolute"></i>
                             </div>
 
