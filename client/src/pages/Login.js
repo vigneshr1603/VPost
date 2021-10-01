@@ -88,7 +88,7 @@ export class Login extends Component {
                             </div>
 
                             <div className="text-center my-4">
-                                <button id="submitbtn" type="button" className="btn btn-primary" name="submitbtn" onClick={this.login}>Login <span><i className="fa fa-sign-in"></i></span></button>
+                                <button id="submitbtn" type="button" className="btn btn-primary" name="submitbtn" onClick={this.login}>Login</button>
                             </div>
                             <div className={this.state.div_class} >
                                 {this.state.error_msg}

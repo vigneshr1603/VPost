@@ -14,10 +14,11 @@ function Navbar() {
                     aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
+                
+                <Link to="/" className="navbar-brand" style={{fontFamily:'Verdana, Geneva, Tahoma, sans-serif'}}>&nbsp;&nbsp;VPost</Link>
                 <Link to="/home" className="d-block d-md-none p-2 bg-primary text-light">&nbsp;&nbsp;<i className="fas fa-home pr-2"></i></Link>
 
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <Link to="/" className="navbar-brand" >&nbsp;&nbsp;VPost</Link>
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li className="nav-item">
                             <Link to="/home" className="nav-link">&nbsp;&nbsp;<i className="fas fa-home"></i> Home</Link>

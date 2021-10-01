@@ -78,7 +78,7 @@ export class SignUp extends Component {
              <section className="container min-container mt-4" >
                     <div className="card-panel p-sm-5 position-relative">
                         <div className="text-center">
-                            <h2 className="mt-2">SignUp!</h2><br></br>
+                            <h2 className="mt-2">Sign Up!</h2><br></br>
                             <img alt="" width="12%" src={signuplogo}></img>
 
                         </div>
@@ -113,7 +113,7 @@ export class SignUp extends Component {
                             </div>
 
                             <div className="text-center my-4">
-                                <button id="submitbtn" type="button" className="btn btn-primary" name="submitbtn" onClick={this.signup}>Signup <span><i className="fa fa-sign-in"></i></span></button>
+                                <button id="submitbtn" type="button" className="btn btn-primary" name="submitbtn" onClick={this.signup}>Sign Up</button>
                             </div>
                             <div className={this.state.div_class} >
                                 {this.state.error_msg}
